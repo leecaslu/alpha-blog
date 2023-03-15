@@ -8,28 +8,7 @@
 </head>
 <body>
   <h1>New Article</h1>
-  <% if @article.errors.any? %>
-    <h2>The following Errors prevented the article from being published</h2>
-    <ul>
-      <%@article.errors.full_messages.each do |msg| %>
-        <li><%= msg %></li>
-      <% end %>
-    </ul>
-  <% end %>
-  <%= form_with scope: :article, url: :articles, local: true do |form| %>
-    <p>
-      <%= form.label :title %> <br>
-      <%= form.text_field :title%>
-    </p>
-    <p>
-      <%= form.label :description %> <br>
-      <%= form.text_area :description%>
-    </p>
-
-    <p>
-      <%= form.submit %>
-    </p>
-  <% end %>
-  <%= link_to 'Back', article_path() %>
+  <%= render 'forms' %>
+  <p><%= link_to 'Back', articles_path %></p>
 </body>
 </html>

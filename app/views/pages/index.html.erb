@@ -11,8 +11,8 @@
   </head>
 
   <body>
-    <h2>Alpha blog - Home 🏠</h2>
-    <p1>This is the home page.</p1>
     <%= yield %>
+    <%= link_to "Articles", articles_path %>
+    <%= link_to "About", about_path %>
   </body>
 </html>

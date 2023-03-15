@@ -7,13 +7,12 @@
   <title>Articles Index</title>
 </head>
 <body>
-  <h3><%= link_to 'New Article', new_article_path() %></h3>
   <table>
     <thead>
       <tr>
         <th>Title</th>
         <th>Description</th>
-        <th>Actions</th>
+        <th colspan=3>Actions</th>
       </tr>
     </thead>
 
@@ -24,10 +23,11 @@
         <td><%= article.description %></td>
         <td><%= link_to 'Show', article_path(article) %></td>
         <td><%= link_to 'Edit', edit_article_path(article)%></td>
-        <td><%= link_to 'Delete', article_path(article), data: {turbo_method: :delete} %></td>
+        <td><%= link_to 'Delete', article_path(article), data: {turbo_method: :delete, turbo_confirm: "Certeza?"}%></td>
       </tr>
       <% end %>
     </tbody>
   </table>
+  <p3><%= link_to 'New Article', new_article_path() %></p3>
 </body>
 </html>

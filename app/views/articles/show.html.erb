@@ -7,8 +7,12 @@
   <title>Article Show</title>
 </head>
 <body>
-  <p1>mostrando articles</p1>
-  <p1>Title: <%= @article.title %></p1>
-  <p1>Description: <%= @article.description %></p1>
+  <p>mostrando articles</p>
+  <p>Title: <%= @article.title %></p>
+  <p>Description: <%= @article.description %></p><br>
+  <p><%= link_to 'Edit', edit_article_path(@article) %> |
+  <%= link_to 'Delete', article_path(@article), data: {turbo_method: :delete, turbo_confirm: "Certeza?"} %> |
+  <%= link_to 'Back', articles_path %>
+  </p>
 </body>
 </html>
