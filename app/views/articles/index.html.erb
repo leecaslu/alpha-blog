@@ -7,6 +7,7 @@
   <title>Articles Index</title>
 </head>
 <body>
+  <h3><%= link_to 'New Article', new_article_path() %></h3>
   <table>
     <thead>
       <tr>
@@ -19,9 +20,11 @@
     <tbody>
       <% @articles.each do |article| %>
       <tr>
-        <th><%= article.title %></th>
-        <th><%= article.description %></th>
-        <th>Actions</th>
+        <td><%= article.title %></td>
+        <td><%= article.description %></td>
+        <td><%= link_to 'Show', article_path(article) %></td>
+        <td><%= link_to 'Edit', edit_article_path(article)%></td>
+        <td><%= link_to 'Delete', article_path(article), data: {turbo_method: :delete} %></td>
       </tr>
       <% end %>
     </tbody>
